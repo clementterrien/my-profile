@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+* {
+    box-sizing: content-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    --first-color: rgb(244, 243, 241);
+    width: 100%;
+    background-color: lightgray;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+p {
+    margin: 0;
+}
+
+div.app-container {
+    margin-top: 50px;
+}
+div.hello-world {
+    min-height: 1800px; width: auto;
+}
+section.main-section {
+    display: flex; flex-direction: column;
+    padding: 100px 50px;
+}
+
+section#profile-section {
+    position: relative;
+    display: flex; flex-direction: column;
+    align-items: center;
+    --iam-card-height: 10vh;
+    background-color: var(--first-color);
+    height: 200px;
+}
+div.iam-card{
+    display: flex; align-items: center;
+    margin: 10px;
+    /* position: absolute; 
+    right: 20vw; top: 40%; */
+    background-color: white;
+    overflow: hidden;
+    width: fit-content; height: var(--iam-card-height);
+}
+div.iam {
+    margin: 0 5px;
+}
+div.iam-card div.changing-words {
+    background-color: black;
+}
+div.iam-card ul {
+    padding: 0; margin: 0;
+}
+div.iam-card li {
+    display: flex;
+    font: 800 1.2em 'Montserrat', sans-serif; color: white;
+    height: var(--iam-card-height);
+    transform: translateY(var(--iam-card-height));
+    align-items: center; justify-content: center;
+    padding: 0 20px;
+}
+
+.flip3 li { animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+
+@keyframes flip3 {
+    0% { transform: translateY(calc(var(--iam-card-height)*-2)); }
+    5% { transform: translateY(calc(var(--iam-card-height)*-1)); }
+    33% { transform: translateY(calc(var(--iam-card-height)*-1)); }
+    38% { transform: translateY(calc(var(--iam-card-height)*0)); }
+    66% { transform: translateY(calc(var(--iam-card-height)*0)); }
+    71% { transform: translateY(calc(var(--iam-card-height)*1)); }
+    99.99% { transform: translateY(calc(var(--iam-card-height)*1)); }
+    100% { transform: translateY(calc(var(--iam-card-height)*-2)); }
+}
+
+
+section#skills-section {
+    background-color: darkgray;
+    height: auto;
+    color: white;
+}
+
+.section-title {
+    display: flex;
+
+}
+.section-content{
+    display: flex; flex-wrap: wrap;
+    padding: 10px 10px 30px 10px;
+}
+.skill-card {
+    color: black;
+    margin-right: 20px; margin-bottom: 20px;
+    font-size: 20px;
+    padding: 5px;
+    background-color: whitesmoke;
+    white-space: nowrap;
+    width: fit-content;
+}
+#about-section {
+    background-color: rgb(244, 243, 241);
+}
+.about-section-col {
+    display: flex; flex-direction: column;
+    width: 50%;
+}
+li{
+    padding: 5px;
+}
+#about-section-social {
+    display: flex;
+    padding-left: 50px ;
+}
+#about-section-social img {
+    width: 40px; margin: 0 10px;
+}
+@media screen and (min-width: 646px) {
+
+}
+@media screen and (min-width: 351px) and (max-width: 645px) {
+    #welcome-section div.iam-card {
+        right: 10vw;
+    }
+}
+@media screen and (max-width: 350px) {
+    #welcome-section div.iam-card {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
