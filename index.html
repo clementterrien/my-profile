@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="navbar.css" rel="stylesheet">
+    <link href="app.css" rel="stylesheet">
+    <script src="app.js"></script>
+    <script src="navbar.js"></script>
+    <title>Clément's CV</title>
+</head>
+<body>
+    <div id="topbar">
+        <div id="topbar-container">
+            <div id="topbar-first-col" class="topbar-col">
+            </div>
+            <div id="topbar-center-col" class="topbar-col">
+                <p>Welcome on my mini CV !</p>
+            </div>
+            <div id="topbar-right-col" class="topbar-col">
+            </div>
+        </div>
+    </div>
+    <nav id='navbar' class="not-developed">
+        <div id='navbar-container'>
+                <div id='navbar-title-div' class="navbar-title-div navbar-container-div developed">
+                    <div id="firstname-text" class="title-item">
+                        Clement/
+                    </div>
+                    <div id="lastname-text" class="title-item">
+                        Terrien
+                    </div>
+                    <span id="title-dot">.</span>
+                </div>
+            <div id="navbar-title-div-reduced" class="navbar-title-div navbar-container-div">
+                C/T.
+            </div>
+            <div id="navbar-pagination-div" class="navbar-container-div not-active">
+                <div class="slider">
+                    <div id='profile-section-button' class="nav-button-div slider-text1 position-0">
+                        <a href="#profile-section" class="nav-link">
+                            <div class="nav-text">Profile</div>
+                        </a>
+                    </div>
+                    <div id='skills-section-button' class="nav-button-div slider-text2 position-0">
+                        <a href="#skills-section" class="nav-link">
+                            <div class="nav-text">
+                                Skills
+                            </div>
+                        </a>
+                    </div>
+                    <div id='projects-section-button' class="nav-button-div slider-text3 position-0">
+                        <a href="#projects-section" class="nav-link">
+                            <div class="nav-text">
+                                Projects
+                            </div>
+                        </a>
+                    </div>
+                    <div id='about-section-button' class="nav-button-div slider-text4 position-0">
+                        <a href="#about-section" class="nav-link">
+                            <div class="nav-text">
+                                About
+                            </div>
+                        </a>
+                    </div>
+                    <div id="indicator"></div>
+                </div>
+            </div>
+            <div id="burger-container" class="navbar-container-div">
+                <div class="box">
+                    <div class="btn not-active">
+                        <span class='burger-span'></span>
+                        <span class='burger-span'></span>
+                        <span class='burger-span'></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <section id="profile-section" class="main-section">
+            <h2>Hello ! I'm Clément and </h2>
+            <div class="iam-card">
+                            <div class="iam">I am</div>
+                            <div class="changing-words">
+                                <ul class="flip3">
+                                    <li class="">Digital Passionate</li>
+                                    <li class="">Data Analyst</li>
+                                    <li class="">Web-Developer</li>
+                                </ul>
+                            </div>
+            </div>
+        </section>
+        <section id="skills-section" class="main-section">
+            <div id="skills-section-title" class="section-title">
+                <h2>My Skills</h2>
+            </div>
+            <div id="skills-section-content" class="section-content">
+                <div class="skill-card">Javascript</div>
+                <div class="skill-card">Data Analysis</div>
+                <div class="skill-card">Web-Development</div>
+                <div class="skill-card">SQL</div>
+                <div class="skill-card">Python</div>
+                <div class="skill-card">PHP</div>
+                <div class="skill-card">Machine Learning</div>
+                <div class="skill-card">Automation</div>
+            </div>
+        </section>
+        <section id="projects-section" class="main-section">
+            <div id="projects-section-title" class="section-title">
+                <h2>My Projects</h2>
+            </div>
+            <div id="project-section-content" class="section-content">
+                <div class="skill-card">Predictive Algorithms</div>
+                <div class="skill-card">E-commerce Websites</div>
+                <div class="skill-card">Movie recomendation system</div>
+                <div class="skill-card">Web Scrapping</div>
+                <div class="skill-card">Market Study Automation</div>
+            </div>
+        </section>
+        <section id="about-section" class="main-section">
+            <div id="skills-section-title" class="section-title">
+                <h2>Infos & Contact</h2>
+            </div>
+            <div id="about-section-content" class="section-content">
+                <div class="about-section-col">
+                    <h3 class="about-section-subtitle">Infos</h3>
+                    <ul>
+                        <li>24 years old.</li>
+                        <li>French</li>
+                        <li>Live in Paris</li>
+                        <li>Speak French, Spanish and English</li>
+                    </ul>
+                </div>
+                <div class="about-section-col">
+                    <h3 class="about-section-subtitle">Contact</h3>
+                    <ul>
+                        <li>Phone: 06 712 149 12</li>
+                        <li>Email: clement.terrien@outlook.com</li>
+                    </ul>
+                    <div id="about-section-social">
+                        <a href="https://www.linkedin.com/in/clementterrien/" target="_blank"><img src="/images/linkedin-logo.png" alt=""></a>
+                        <a href="#"target="_blank"><img src="/images/instagram-logo.png" alt=""></a>
+                        <a href="#"target="_blank"><img src="/images/facebook-logo.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

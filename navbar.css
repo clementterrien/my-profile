@@ -1,0 +1,448 @@
+div#topbar {
+    display: flex;
+    width: 100%; height: 50px;
+    background-color: rgb(245, 247, 246);
+    border-bottom: solid 1px rgb(230, 230, 230);
+}
+div#topbar-container {
+    display: flex; 
+    height: 100%; width: 100%;
+    padding-left: 2%; padding-right: 2%;
+}
+
+div.topbar-col {
+    width: 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.topbar-col > p {
+    text-align: center;
+}
+
+nav#navbar {
+    /* FONT TITLE CONFIG */
+    --title-font-family: 'Raleway', sans-serif;
+    /* Fullscreen*/
+    --title-font-size-fullscreen: 3.5vh; 
+    --title-letter-spacing-fullscreen: .05rem; 
+    --title-font-weight-fullscreen: 800;
+    
+    /* Smallscreen*/
+    --title-font-size-smallscreen: 24px; 
+    --title-letter-spacing-smallscreen: .05rem; 
+    --title-font-weight-smallscreen: 800;
+
+    /* FONT NAVIGATION CONFIG*/
+    --navigation-font-family: 'Raleway', sans-serif;
+    --navigation-progress-height: 7%;
+    --navigation-progress-bar-color: rgb(108, 194, 182);
+    
+    /* Fullscreen*/
+    --navigation-font-size-fullscreen: 18px;
+    --navigation-font-color: #000;
+    /* Smallscreen*/
+    --navigation-text-transform-smallscreen: capitalize; /* e.g: [Capitalize/UPPERCASE] */
+    --navigation-font-size-smallscreen: 20px; 
+    --navigation-letter-spacing-smallscreen: .08rem; 
+    --navigation-font-weight-smallscreen: 500;
+    --navbar-inner-border: solid 1px rgb(230, 234, 234);
+    --developed-menu-margin: 2vh;
+
+    /* NAVBAR CONFIG */
+    /* Navbar-sizing*/
+    --navigation-height: 10.5vh; /* Change also the scroll-margin-top property of section tag;*/
+    /* Navbar-color*/
+    --navbar-bg-color: rgb(245, 247, 246);
+    /* Hamburger */
+    --hamburger-margin: 6px;
+    --hamburger-slice-height: 2px; --hamburger-slice-width: 60%;
+    --hamburger-move: calc(var(--hamburger-slice-height) + var(--hamburger-margin));
+    --hamburger-color: #000;
+
+
+    display: flex; justify-content: space-between;
+    position: sticky; top: 0;
+    box-sizing:content-box;
+    width: 100%; height: var(--navigation-height);
+    background-color:var(--navbar-bg-color); /* Black background color */
+    transition: top 0.5s; /* Transition effect when sliding down (and up) */ 
+    z-index: 10;  
+}
+section {
+    scroll-margin-top: var(--navigation-height, 10.5vh);
+}
+div#navbar-container {
+    width: 100%; box-sizing:content-box;
+    display: flex; justify-content: space-between;
+    padding-left: 10%; padding-right: 10%;
+}
+div#navbar-title-div {
+    display: flex;
+}
+div#navbar-title-div-reduced {
+    display: none; padding: 0 5%;
+}
+div.navbar-title-div {
+    font-family: var(--title-font-family); font-size: var(--title-font-size-fullscreen);
+    letter-spacing: var(--title-letter-spacing-fullscreen); font-weight: var(--title-font-weight-fullscreen);
+    transition: color 0.2s ease-out;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+div.title-item {
+        display: flex; align-items: center;
+}
+span#title-dot{
+    display: flex; align-items: center; padding-bottom: 5px;
+    font-size: 30px !important;
+}
+
+div#navbar-pagination-div {
+    display: flex; width: 45%; min-width: 300px; overflow: hidden;
+    font-family: var(--navigation-font-family); font-size: var(--navigation-font-size-fullscreen);
+    box-sizing:content-box;
+}
+div.slider {
+    position: relative;
+    display: flex; width: 100%; height: 100%;
+}
+div.nav-button-div{
+    display: flex; min-width: 75px;
+    flex: 1 1 0;
+    transition: margin 0.5s ease-out;
+}
+a.nav-link {
+    color: inherit;
+    width: 100%; height: 100%; color: var(--navigation-font-color); 
+    position: relative;
+    text-decoration: none;
+}
+
+#indicator
+{
+    position: absolute;
+    left: -25%;
+    bottom: 0;
+    width: 25%;
+    height: 5px;
+    background-color: rgb(108, 194, 182);
+    border-radius: 5px;
+    transition: 0.4s ease left, background-color 0.4s ease;
+}
+
+nav div.nav-button-div.active:nth-child(1) ~ #indicator
+{
+    left: 0;
+    background-color: var(--navigation-progress-bar-color);
+}
+nav div.nav-button-div.active:nth-child(2) ~ #indicator
+{
+    left: 25%;
+    background-color: var(--navigation-progress-bar-color);
+}
+nav div.nav-button-div.active:nth-child(3) ~ #indicator
+{
+    left: 50%;
+    background-color: var(--navigation-progress-bar-color);
+}
+nav div.nav-button-div.active:nth-child(4) ~ #indicator
+{
+    left: 75%;
+    background-color: var(--navigation-progress-bar-color);
+}
+
+nav div.nav-button-div:nth-child(1):hover ~ #indicator
+{
+    left: 0%;
+    background-color: darkblue;
+}
+nav div.nav-button-div:nth-child(2):hover ~ #indicator
+{
+    left: 25%;
+    background-color: darkblue;
+}
+nav div.nav-button-div:nth-child(3):hover ~ #indicator
+{
+    left: 50%;
+    background-color: darkblue;
+
+}
+nav div.nav-button-div:nth-child(4):hover ~ #indicator
+{
+    left: 75%;
+    background-color: darkblue;
+
+}
+
+div.scroll-indicator-bar{
+    width: 100%; height: var(--navigation-progress-height);
+    background-color: none;
+    transition: background-color 0.2s ease-in-out;
+    position: absolute; bottom: 0;
+}
+div.nav-text{
+    width: 100%; height: 100%; color:black;
+    display: flex; justify-content: center;
+    align-items: center;
+    transition: 0.2s ease color;
+}
+div.nav-text:hover{
+    color: rgb(108, 194, 182);
+}
+div#burger-container {
+    display: none;
+}
+
+
+@media only screen and (min-width: 646px) and (max-width: 780px){
+    div#navbar-container {
+        justify-content: space-between;
+        padding: 0 5%;
+    }
+}
+
+@media only screen and (max-width: 645px) {
+    nav#navbar {
+        overflow: hidden; 
+        --navigation-height: 8.5vh;
+        transition: 0.5s padding ease-out, background-color 0.2s ease-out;
+    }
+    nav#navbar.developed {
+        padding-bottom: calc(var(--navigation-height)*3 + var(--developed-menu-margin)*8);
+        transition: 0.5s padding ease-out, background-color 0.2s ease-out;;
+        background-color: black;
+        color: white;
+    }
+    nav#navbar.developed div.nav-text{
+        color: white;
+    }
+    section {
+        scroll-margin-top: var(--navigation-height, 8.5vh);
+    }
+    div#navbar-container {
+        justify-content: space-between;
+        padding: 0 1%;
+    }
+    div.navbar-title-div {
+    font-size: var(--title-font-size-smallscreen); font-weight: var(--title-font-weight-smallscreen);
+    letter-spacing: var(--title-letter-spacing-smallscreen); 
+    }
+    div#navbar-title-div {
+        display: none;
+        justify-content: center;
+    }
+    div#navbar-title-div-reduced {
+        display: flex; align-items: center;
+    }
+
+    div#navbar-pagination-div{
+        font-size: var(--navigation-font-size-smallscreen); font-weight: var(--navigation-font-weight-smallscreen);
+        text-transform: var(--navigation-text-transform-smallscreen); letter-spacing: var(--navigation-letter-spacing-smallscreen);
+        align-items: flex-end;
+        width: 50%; min-width: 0; 
+        height: 100%;
+    }
+    div#navbar-pagination-div.active{
+        overflow: inherit;
+        position: relative; top: 0; 
+        padding: 0;
+    }
+
+    div#navbar-pagination-div.active div.nav-button-div {
+        padding: var(--developed-menu-margin) 0;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    div#navbar-pagination-div.active div.nav-button-div:nth-child(1) {
+        padding-top: 0;
+    }
+    div#navbar-pagination-div.active div.nav-button-div.active {
+        outline: 1px solid black;
+    }
+    #indicator {
+        display: none;
+    }
+    div.scroll-indicator-bar {
+        height: 0;
+    }
+    div.nav-button-div{
+        width: 100%; height: var(--navigation-height); 
+        transform: translateY(60px);
+        opacity: 0; 
+        transition: transform 0.5s, opacity 1s ease-in-out, padding .5s ease-out;;
+    }
+    div.nav-button-div.active {
+        display: flex;
+        opacity: 1;
+    }
+    div.slider{
+        display: flex; flex-direction: column;
+    }
+
+    /* Navigation Movement */
+    div.nav-button-div.position-0{
+        display: flex;
+        transform: translateY(100%);
+    }
+    div.nav-button-div.position-1{
+        display: flex;
+        transform: translateY(0px);
+    }
+    div.nav-button-div.position-2{
+        display: flex;
+        transform: translateY(-100%);
+    }
+    div.nav-button-div.position-3{
+        display: flex;
+        transform: translateY(-200%);
+    }
+    div.nav-button-div.position-4{
+        display: flex;
+        transform: translateY(-300%);
+    }
+    /* a.nav-link {
+	pointer-events: none;
+	cursor: default;
+    } */
+    
+    /*Burger part */ 
+    div#burger-container {
+        display: flex;
+        width: 10%;
+        max-width: 40px; height: 100%;
+        padding: 0 5%;
+    }
+    .box {
+    display: flex; 
+    align-items: center; justify-content: center;
+    border-radius: 2px;
+    width: 100%; height: 100%;
+    }
+    .btn {
+        width: var(--hamburger-slice-width);
+        cursor: pointer;
+    }
+    div.navbar-container-div:nth-last-child(1){
+        box-sizing: content-box;
+        border-left: var(--navbar-inner-border);
+    }
+    nav#navbar.developed span {
+        background-color: white;
+    }
+    span.burger-span {
+        display: block;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.3);
+        border-radius: calc(var(--hamburger-slice-height) / 2);
+        height: var(--hamburger-slice-height);
+        width: 100%;
+        background-color: var(--hamburger-color);
+        transition: all .3s;
+        position: relative;
+    }
+    span.burger-span + span.burger-span {
+        margin-top: var(--hamburger-margin);
+    }
+    .active span:nth-child(1) {
+        animation: ease .7s top forwards;
+    }
+    .not-active span:nth-child(1) {
+        animation: ease .7s top-2 forwards;
+    }
+
+    .active span:nth-child(2) {
+        animation: ease .7s scaled forwards;
+    }
+    .not-active span:nth-child(2) {
+        animation: ease .7s scaled-2 forwards;
+    }
+    .active span:nth-child(3) {
+        animation: ease .7s bottom forwards;
+    }
+    .not-active span:nth-child(3) {
+        animation: ease .7s bottom-2 forwards;
+    }
+
+    @keyframes top {
+        0% {
+            top: 0;
+            transform: rotate(0);
+        }
+        50% {
+            top: var(--hamburger-move);
+            transform: rotate(0);
+        }
+        100% {
+            top: var(--hamburger-move);
+            transform: rotate(45deg);
+        }
+    }
+
+    @keyframes top-2 {
+        0% {
+            top: var(--hamburger-move);
+            transform: rotate(45deg);
+        }
+        50% {
+            top: var(--hamburger-move);
+            transform: rotate(0deg);
+        }
+        100% {
+            top: 0px;
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes bottom {
+        0% {
+            bottom: 0;
+            transform: rotate(0);
+        }
+        50% {
+            bottom: var(--hamburger-move);
+            transform: rotate(0);
+        }
+        100% {
+            bottom: var(--hamburger-move);
+            transform: rotate(135deg);
+        }
+    }
+
+    @keyframes bottom-2 {
+        0% {
+            bottom: var(--hamburger-move);
+            transform: rotate(135deg);
+        }
+        50% {
+            bottom: var(--hamburger-move);
+            transform: rotate(0);
+        }
+        100% {
+            bottom: 0;
+            transform: rotate(0);
+        }
+    }
+
+    @keyframes scaled {
+        50% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    @keyframes scaled-2 {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+
+
